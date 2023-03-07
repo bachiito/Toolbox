@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Age Guesser</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content ion-padding">
+  <form action="/" #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+    <ion-list>
+      <ion-item>
+        <ion-label for="name" position="floating">
+          <ion-text color="danger">*</ion-text>
+          Escriba un nombre
+          <ion-text color="danger"><em>Obligatorio</em></ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Pedro"
+          required
+          [(ngModel)]="name"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      strong="true"
+      class="ion-margin-top"
+      [disabled]="formulario.invalid"
+    >
+      Comprobar
+    </ion-button>
+  </form>
+
+  <ion-card class="ion-hide ion-no-margin ion-margin-vertical">
+    <ion-card-header>
+      <ion-card-title> {{ ageRange }} </ion-card-title>
+      <ion-card-subtitle> {{ personInfo }} </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ ageDescription }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <p id="error" class="ion-hide ion-text-center">Nombre no registrado.</p>
+</ion-content>

@@ -18,6 +18,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/gender/gender.module').then((m) => m.GenderPageModule),
   },
+  {
+    path: 'age',
+    loadChildren: () =>
+      import('./pages/age/age.module').then((m) => m.AgePageModule),
+  },
 ];
 
 @NgModule({
