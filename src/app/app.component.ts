@@ -10,6 +10,11 @@ export class AppComponent {
     { title: 'Género', url: '/gender', icon: 'body-outline' },
     { title: 'Edad', url: '/age', icon: 'calendar-number-outline' },
     { title: 'Universidades', url: '/universities', icon: 'book-outline' },
+    {
+      title: 'Clima Dominicano',
+      url: '/weather',
+      icon: 'thunderstorm-outline',
+    },
   ];
   constructor() {}
 }

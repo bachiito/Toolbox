@@ -30,6 +30,11 @@ const routes: Routes = [
         (m) => m.UniversitiesPageModule
       ),
   },
+  {
+    path: 'weather',
+    loadChildren: () =>
+      import('./pages/weather/weather.module').then((m) => m.WeatherPageModule),
+  },
 ];
 
 @NgModule({
