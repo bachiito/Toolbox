@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid class="ion-padding-vertical">
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-title>Gender Guesser</ion-title>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-icon name="body-outline" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form action="/" #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+    <ion-list>
+      <ion-item>
+        <ion-label for="name" position="floating">
+          <ion-text color="danger">*</ion-text>
+          Escriba un nombre
+          <ion-text color="danger"><em>Obligatorio</em></ion-text>
+        </ion-label>
+        <ion-input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Pedro"
+          required
+          [(ngModel)]="name"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      strong="true"
+      class="ion-margin-top"
+      [disabled]="formulario.invalid"
+    >
+      Comprobar
+    </ion-button>
+  </form>
+
+  <div class="ion-text-center">
+    <p>{{ gender }}</p>
+  </div>
+</ion-content>
