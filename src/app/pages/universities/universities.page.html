@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Universidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form action="/" #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+    <ion-list>
+      <ion-item>
+        <ion-label for="country" position="floating">
+          <ion-text color="danger">*</ion-text>
+          Escriba el nombre de un país en inglés
+        </ion-label>
+        <ion-input
+          type="text"
+          name="country"
+          id="country"
+          placeholder="France"
+          required
+          [(ngModel)]="country"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      strong="true"
+      class="ion-margin-top"
+      [disabled]="formulario.invalid"
+    >
+      Listar Universidades
+    </ion-button>
+  </form>
+
+  <article id="cards" class="ion-hide"></article>
+</ion-content>
