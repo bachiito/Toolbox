@@ -15,6 +15,11 @@ export class AppComponent {
       url: '/weather',
       icon: 'thunderstorm-outline',
     },
+    {
+      title: 'Contáctame',
+      url: '/about-me',
+      icon: 'send-outline',
+    },
   ];
   constructor() {}
 }
